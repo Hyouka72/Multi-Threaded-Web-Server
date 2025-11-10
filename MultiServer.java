@@ -29,6 +29,8 @@ public class MultiServer {
             System.out.println("Waiting for client on port " + port);
             while(true){
                 Socket acceptedSocket = serverSocket.accept();
+                //remotesoucket mean out local ipaddress
+                System.out.println("Connection accepted form client"+acceptedSocket.getRemoteSocketAddress());
                 Thread thread = new Thread(() ->
                 {
                     try {

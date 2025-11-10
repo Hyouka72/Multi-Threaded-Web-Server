@@ -7,8 +7,6 @@
     <list default="true" id="915b0152-c787-49ff-a962-913fe8f4c669" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MultiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/MultiClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultiServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MultiServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SingleThreaded/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/SingleThreaded/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1762659007358</updated>
       <workItem from="1762659008829" duration="3380000" />
-      <workItem from="1762762703156" duration="3281000" />
+      <workItem from="1762762703156" duration="1195000" />
     </task>
     <servers />
   </component>

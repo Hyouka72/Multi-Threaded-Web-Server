@@ -24,8 +24,10 @@ public class Server {
                 PrintWriter toClient = new PrintWriter(acceptedConnection.getOutputStream());
                 BufferedReader fromClient = new BufferedReader (new InputStreamReader(acceptedConnection.getInputStream()));
                 toClient.println("Hello From the Server");
+                //once the connection is do and message is send. the streams are closed.
                 toClient.close();
                 fromClient.close();
+                //close the socket
                 acceptedConnection.close();
             }catch (IOException ex){
                 ex.printStackTrace();
