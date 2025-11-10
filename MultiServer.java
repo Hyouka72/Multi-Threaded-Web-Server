@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -6,12 +8,20 @@ import java.util.function.Consumer;
 
 public class MultiServer {
 
+    static int counter = 1;
+    //Consumer works as Client in every Threads
     public Consumer<Socket> getConsumer() throws IOException {
         return (clientSocket) -> {
             try{
-                PrintWriter toClient = new PrintWriter(clientSocket.getOutputStream());
-                toClient.println("Hello form the multiServer");
+                PrintWriter toClient = new PrintWriter(clientSocket.getOutputStream(), true);
+                BufferedReader fromClient = new BufferedReader (new InputStreamReader(clientSocket.getInputStream()));
+                toClient.println("Hello form the multiServer" + counter);
+                counter+=1;
+                String line = fromClient.readLine();
+                System.out.println("Response form the socket "+line);
+
                 toClient.close();
+                fromClient.close();
                 clientSocket.close();
             }
             catch(IOException ex){
@@ -27,6 +37,7 @@ public class MultiServer {
             ServerSocket serverSocket = new ServerSocket(port);
             serverSocket.setSoTimeout(10000);
             System.out.println("Waiting for client on port " + port);
+            // TO accept multiple client
             while(true){
                 Socket acceptedSocket = serverSocket.accept();
                 //remotesoucket mean out local ipaddress

@@ -19,7 +19,7 @@ public class MultiClient {
                 ){
                     toSocket.println("Hello form MultiClient "+ socket.getLocalSocketAddress());
                     String line = fromSocket.readLine();
-                    System.out.println("Response form Server "+line);
+                    System.out.println("Response from Server "+line);
                 }
             }catch (IOException ex){
                 ex.printStackTrace();
@@ -30,7 +30,9 @@ public class MultiClient {
 
     public static void main(String[] args) {
         MultiClient client = new MultiClient();
-        for(int i = 0; i < 5 ;i++)
+
+        //sending 50 clients to the server
+        for(int i = 0; i < 50 ;i++)
         {
             try{
                 Thread thread = new Thread(client.getRunnable());
